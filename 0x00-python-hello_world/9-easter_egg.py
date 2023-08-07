@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 
-print("The Zen of Python, by Tim Peters\n")
+file_path = 'poem.txt'
+with open(file_path, 'r') as file:
+    for line in file:
+        print(line.strip())
