@@ -2,4 +2,4 @@
 
 for char in 'abcdefghijlmnopqrstuvxyz':
     if char != 'q' and char != 'e':
-        print(char, end='')
+        print("{}".format(char), end='')
