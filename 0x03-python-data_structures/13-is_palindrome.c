@@ -1,4 +1,9 @@
 #include "lists.h"
+/**
+ * reverseList - reverses list
+ * @head: pointer to head
+ * Return: previous pointer
+ */
 
 listint_t *reverseList(listint_t *head)
 {
@@ -15,6 +20,11 @@ listint_t *reverseList(listint_t *head)
 	}
 	return (prev);
 }
+/**
+ * is_palindrome - checks if linked list is a palindrome
+ * @head: double pointer to head
+ * Return: 0 if not palindrome, 1 if it is
+ */
 
 int is_palindrome(listint_t **head)
 {
