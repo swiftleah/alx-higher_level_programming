@@ -5,4 +5,3 @@ class Square:
     """ Class for 'Square'
     Args: none - it is empty
     """
-    pass
