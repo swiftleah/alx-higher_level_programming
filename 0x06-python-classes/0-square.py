@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-""" Documentation: Empty class of 'Sqaure'
-
-Args:
-    none
-Returns:
-    none
-"""
-
+""" Define an empty class 'Square' """
 
 class Square:
+    """ Class for 'Square'
+    Args: none - it is empty
+    """
     pass
