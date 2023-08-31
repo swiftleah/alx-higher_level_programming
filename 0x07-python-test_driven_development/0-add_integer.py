@@ -1,17 +1,14 @@
 #!/usr/bin/python3
 """
 Function that adds 2 integers
+Args: int a
+int b = 98
 """
 
 
 def add_integer(a, b=98):
     """
     Define function add_integer
-    Args:
-    int a
-    int b = 98
-    if a or b = float, cast to int
-    if a or b not int, raise TypeError
     """
     a = int(a) if isinstance(a, float) else a
     b = int(b) if isinstance(b, float) else b
