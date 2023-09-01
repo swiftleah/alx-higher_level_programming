@@ -1,0 +1,36 @@
+Task 0-add_integer.py
+
+add_integer(a, b) adds a and b. must be integers. if float - changed to int.
+
+Test with ints: should add a and b
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 3)
+5
+
+Test with non-ints: should raise TypeError
+
+>>> add_integer("hi", 0)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(0, "p")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Test with one argument: b = 98 if no argument given
+
+>>> add_integer(2)
+100
+
+Test with floats: floats should be casted to ints before sum
+
+>>> add_integer(2, 9.0)
+11
+
+>>> add_integer(4.2, -1)
+3
