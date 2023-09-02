@@ -1,0 +1,24 @@
+Task 3: 3-say_my_name function
+
+Function prints full name given.
+first_name & last_name must be a string, otherwise TypeError is raised.
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Leah", "Rose")
+My name is Leah Rose
+
+
+Test with non-string argument:
+>>> say_my_name(9, "Bob")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("McDonald", -1)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+Test with no argument:
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
