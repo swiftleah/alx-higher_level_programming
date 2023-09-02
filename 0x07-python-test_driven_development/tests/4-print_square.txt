@@ -1,0 +1,27 @@
+Task 4:
+
+print_square function prints square of size "size" in ints
+"size" must be an int, otherwise TypeError is raised.
+if "size" is a float & less than zero, TypeError is raised.
+"size" must be greater than 0, otherwise ValueError is raised.
+
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(0)
+
+>>> print_square("l")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+>>> print_square(-2.0)
+Traceback (most recent call last):
+TypeError: size must be an integer
