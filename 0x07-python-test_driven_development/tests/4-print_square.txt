@@ -12,6 +12,9 @@ if "size" is a float & less than zero, TypeError is raised.
 ####
 ####
 
+>>> print_square(1)
+#
+
 >>> print_square(0)
 
 >>> print_square("l")
