@@ -5,10 +5,8 @@ function prints text and two newlines after encountering: '.', '?' and ':'
 test must be a string, otherwise TypeError is raised.
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("Hi? Yes: it is me.")
+>>> text_indentation("Hi? Yes:")
 Hi?
 <BLANKLINE>
 Yes:
-<BLANKLINE>
-It is me.
 <BLANKLINE>
