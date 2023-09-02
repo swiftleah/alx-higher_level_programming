@@ -1,0 +1,29 @@
+Task 1:
+
+Function matrix_divided - divides all elements of a matrix (matrix) by number (div).
+'div' must be an integer or float - otherwise TypeError is raised
+'div' must not be equal to 0 - otherwise ZeroDivisionError is raised
+'matrix' must be a list of lists of ints or floats - otherwise TypeError is raised
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[2, 4, 6],[8, 10, 12]], 2)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+>>> matrix_divided([[2, 4, 6],[8, 10, 12, 20]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided([[2, 4, 6],[8, 10, 12]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix_divided([[2, 4, 6],[8, 10, 12]], 1.0)
+[[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+
+>>> matrix_divided([[2, 4, 6],[8, 10, 12]], "l")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided([[2, 4, 6], [8, "l", 12]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats

@@ -1,0 +1,43 @@
+Trying:
+    matrix_divided = __import__('2-matrix_divided').matrix_divided
+Expecting nothing
+ok
+Trying:
+    matrix_divided([[2, 4, 6],[8, 10, 12]], 2)
+Expecting:
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+ok
+Trying:
+    matrix_divided([[2, 4, 6],[8, 10, 12, 20]], 2)
+Expecting:
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+ok
+Trying:
+    matrix_divided([[2, 4, 6],[8, 10, 12]], 0)
+Expecting:
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+ok
+Trying:
+    matrix_divided([[2, 4, 6],[8, 10, 12]], 1.0)
+Expecting:
+    [[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+ok
+Trying:
+    matrix_divided([[2, 4, 6],[8, 10, 12]], "l")
+Expecting:
+    Traceback (most recent call last):
+    TypeError: div must be a number
+ok
+Trying:
+    matrix_divided([[2, 4, 6], [8, "l", 12]], 2)
+Expecting:
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+ok
+1 items passed all tests:
+   7 tests in 2-matrix_divided.txt
+7 tests in 1 items.
+7 passed and 0 failed.
+Test passed.
