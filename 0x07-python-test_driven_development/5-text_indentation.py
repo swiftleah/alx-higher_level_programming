@@ -10,24 +10,18 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    punctuation = [".", "?", ":"]
-    lines = []
-    line = ""
+    formatted_text = ""
+    prev_char_was_separator = False
 
     for char in text:
-        if char == '\n':
-            lines.append(line)
-            lines.append("")
-            line = ""
+        if char in ".?:":
+            formatted_text += char + '\n\n'
+            prev_char_was_separator = True
         else:
-            line += char
-            if char in punctuation:
-                lines.append(line)
-                lines.append("")
-                line = ""
+            formatted_text += char
+            prev_char_was_separator = False
 
-    if line:
-        lines.append(line)
-
-    for line in lines:
-        print(line)
+    lines = formatted_text.split('\n')
+    lines = [line.strip() for line in lines]
+    formatted_text = '\n'.join(lines)
+    print(formatted_text)
