@@ -1,0 +1,14 @@
+Task 4:
+
+text_indetnation function takes argument 'text'.
+function prints text and two newlines after encountering: '.', '?' and ':'
+test must be a string, otherwise TypeError is raised.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hi? Yes: it is me.")
+Hi?
+<BLANKLINE>
+Yes:
+<BLANKLINE>
+It is me.
+<BLANKLINE>
