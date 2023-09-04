@@ -2,7 +2,7 @@
 """ Empty class Rectangle - defines a rectangle """
 
 
-class Recntangle:
+class Rectangle:
     """ Class Rectangle
     Args: none
     """
