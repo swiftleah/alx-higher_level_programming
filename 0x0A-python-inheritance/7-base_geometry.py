@@ -8,8 +8,9 @@ class BaseGeometry:
         """ public instance area
         Args:
             self
-        Return:
-            raise Exceptions where needed
+        Raises:
+            ValueError
+            TypeError
         """
         raise Exception("area() is not implmeneted")
 
