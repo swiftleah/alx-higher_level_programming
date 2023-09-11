@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""
-class BaseGeomtry with Exception messages
-"""
+"""class BaseGeomtry with Exception messages"""
 
 
 class BaseGeometry:
     """ define instances:"""
     def area(self):
         """ public instance area
-        Args: self
+        Args:
+            self
+        Return:
+            raise Exceptions where needed
         """
         raise Exception("area() is not implmeneted")
 
