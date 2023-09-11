@@ -1,0 +1,8 @@
+Tests for task 1: print_sorted(self)
+
+Prints list in sorted order
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList([4, 3, 5, 2])
+>>> my_list.print_sorted()
+[2, 3, 4, 5]
