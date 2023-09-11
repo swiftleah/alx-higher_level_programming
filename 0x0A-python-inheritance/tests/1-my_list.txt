@@ -6,3 +6,7 @@ Prints list in sorted order
 >>> my_list = MyList([4, 3, 5, 2])
 >>> my_list.print_sorted()
 [2, 3, 4, 5]
+
+>>> my_list = MyList([8, 7, 6, 0])
+>>> my_list.print_sorted()
+[0, 6, 7, 8]
