@@ -9,5 +9,7 @@ class MyList(list):
     Args: list
     """
     def print_sorted(self):
-        sorted_list = sorted(self)
-        print(sorted_list)
+        """ print_sorted
+        Args: self
+        prints list in order """
+        print(sorted(self))
