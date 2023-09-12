@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 """ Function from_json_string """
 
 
