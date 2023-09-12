@@ -3,9 +3,6 @@
 simple data structure for JSON serialization of object """
 
 
-import json
-
-
 def class_to_json(obj):
     """ define function
     Args: obj """
