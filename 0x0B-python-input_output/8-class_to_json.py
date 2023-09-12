@@ -20,7 +20,7 @@ def class_to_json(obj):
         elif hasattr(value, '__dict__'):
             return class_to_json(value)
         else:
-            raise ValueError("Unsupported data type: {}".format(type(value).__name__))
+            return 0
 
     if hasattr(obj, '__dict__'):
         serialized = {}
