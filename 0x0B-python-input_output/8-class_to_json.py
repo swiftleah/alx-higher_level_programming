@@ -9,23 +9,4 @@ import json
 def class_to_json(obj):
     """ define function
     Args: obj """
-    def serialize_value(value):
-        """ Checks what kind of value 'value' is """
-        if isinstance(value, (int, str, bool, type(None))):
-            return value
-        elif isinstance(value, list):
-            return [serialize_value(item) for item in value]
-        elif isinstance(value, dict):
-            return {key: serialize_value(val) for key, val in value.items()}
-        elif hasattr(value, '__dict__'):
-            return class_to_json(value)
-        else:
-            return 0
-
-    if hasattr(obj, '__dict__'):
-        serialized = {}
-        for key, value in obj.__dict__.items():
-            serialized[key] = serialize_value(value)
-        return serialized
-    else:
-        return 0
+    return obj.__dict__
