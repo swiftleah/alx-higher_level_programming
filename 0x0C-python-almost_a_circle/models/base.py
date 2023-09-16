@@ -2,6 +2,9 @@
 """ class Base - will be the base of all other classes """
 
 
+import json
+
+
 class Base:
     """ class """
     __nb_objects = 0
@@ -14,3 +17,13 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ returns JSON string rep of argument
+        Arg: list_dictionaries - list of dicts """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            json_list_dictionaries = json.dumps(list_dictionaries)
+            return json_list_dictionaries
