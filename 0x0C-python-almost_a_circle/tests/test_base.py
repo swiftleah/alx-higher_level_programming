@@ -17,3 +17,11 @@ class TestBase_to_json_string(unittest.TestCase):
 
     def test_to_json_string_none(self):
         self.assertEqual(Base.to_json_string(None), "[]")
+
+    def test_to_json_string_one_rectangle_dict(self):
+        rect1 = Rectangle(9, 6, 1, 7)
+        rect1_dict = rect1.to_dictionary()
+
+        rect1_json = rect1.to_json_string([rect1_dict])
+
+        self.assertEqual(len(rect1_json), 52)
