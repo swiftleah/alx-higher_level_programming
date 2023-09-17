@@ -12,5 +12,8 @@ from models.square import Square
 class TestBase_to_json_string(unittest.TestCase):
     """ Unittests for Task 15: returns JSON string rep
     of list_dicitonaries """
-    def test_to_json_string_empty_dict(self):
-        self.assertEqual("[]", Base.to_json_string([]))
+    def test_to_json_string_empty_list(self):
+        self.assertEqual(Base.to_json_string([]), "[]")
+
+    def test_to_json_string_none(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
