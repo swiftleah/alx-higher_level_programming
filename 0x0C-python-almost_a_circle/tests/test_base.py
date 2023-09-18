@@ -70,5 +70,18 @@ class TestBase_to_json_string(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.to_json_string([], 1)
 
+class TestBase_save_to_file(unittest.TestCase):
+    """ writes JSON string rep to specified file """
+    def test_save_to_file_none(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+
+    def test_save_to_file_empty(self):
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+
+
 if __name__ == '__main__':
     unittest.main()
