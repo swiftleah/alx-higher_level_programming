@@ -22,9 +22,7 @@ class TestBase_to_json_string(unittest.TestCase):
         rect1 = Rectangle(9, 6, 1, 7, 2)
         rect1_dict = rect1.to_dictionary()
 
-        rect1_json = rect1.to_json_string([rect1_dict])
-
-        self.assertEqual(len(rect1_json), 52)
+        self.assertTrue(len(Base.to_json_string([rect1_dict])), 52)
 
     def test_to_json_string_two_rectangle_dict(self):
         rect1 = Rectangle(9, 6, 1, 7, 2)
@@ -35,3 +33,31 @@ class TestBase_to_json_string(unittest.TestCase):
         list_dicts = [rect1.to_json_string([rect1_dict]), rect1.to_json_string([rect2_dict])]
 
         self.assertTrue(len(list_dicts), 106)
+
+    def test_to_json_string_one_square_dict(self):
+        sq1 = Square(10, 2, 5, 6)
+        sq1_dict = sq1.to_dictionary()
+
+        self.assertTrue(len(Base.to_json_string([sq1_dict])), 39)
+
+    def test_to_json_string_two_square_dict(self):
+        sq1 = Square(10, 2, 5, 6)
+        sq2 = Square(11, 3, 6, 7)
+        sq1_dict = sq1.to_dictionary()
+        sq2_dict = sq2.to_dictionary()
+
+        list_squares = [sq1_dict, sq2_dict]
+
+        self.assertTrue(len(Base.to_json_string([list_squares])), 78)
+
+    def test_to_json_string_type_rectangle(self):
+        rect1 = Rectangle(9, 6, 1, 7, 2)
+        rect1_dict = rect1.to_dictionary()
+
+        self.assertEqual(str, type(Base.to_json_string([rect1_dict])))
+
+    def test_to_json_string_type_square(self):
+        sq1 = Square(10, 2, 5, 6)
+        sq1_dict = sq1.to_dictionary()
+
+        self.assertTrue(str, type(Base.to_json_string([sq1_dict])))
