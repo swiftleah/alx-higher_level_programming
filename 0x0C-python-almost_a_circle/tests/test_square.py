@@ -16,6 +16,43 @@ class TestSquare_instances(unittest.TestCase):
 
         self.assertIsInstance(sq, Base)
 
+    def test_area_square(self):
+        sq = Square(5)
+
+        self.assertTrue(sq.area(), 25)
+
+    def test_no_arguments_square(self):
+        with self.assertRaises(TypeError):
+            Square()
+
+    def test_size_getter(self):
+        sq = Square(5)
+
+        self.assertEqual(sq.size, 5)
+
+    def test_size_setter(self):
+        sq = Square(5)
+        sq.size = 10
+
+        self.assertEqual(sq.size, 10)
+
+    def test_width_and_height_getter(self):
+        sq = Square(5)
+
+        self.assertEqual(sq.width, sq.height)
+
+    def test_height_setter(self):
+        sq = Square(5)
+        sq.size = 10
+
+        self.assertEqual(sq.height, 10)
+
+    def test_width_setter(self):
+        sq = Square(6)
+        sq.size = 10
+
+        self.assertEqual(sq.width, 10)
+
 
 class TestSquare_update(unittest.TestCase):
     """ Unittest for Task 12: assigns attributes
