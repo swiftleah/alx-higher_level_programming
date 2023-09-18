@@ -69,3 +69,6 @@ class TestBase_to_json_string(unittest.TestCase):
     def test_to_json_string_two_wrong_arguments(self):
         with self.assertRaises(TypeError):
             Base.to_json_string([], 1)
+
+if __name__ == '__main__':
+    unittest.main()
