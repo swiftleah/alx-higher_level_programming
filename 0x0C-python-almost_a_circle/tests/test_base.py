@@ -119,6 +119,26 @@ class TestBase_create(unittest.TestCase):
 
         self.assertEqual("[Square] (1) 5/6 - 3", str(sq1))
 
+class TestBase_load_from_file(unittest.TestCase):
+    """ Unittests for Task 19: returns list of instances """
+    def test_load_from_file_no_file_square(self):
+        output = Square.load_from_file()
+
+        self.assertEqual(([]), output)
+
+    def test_load_from_file_many_args(self):
+        with self.assertRaises(TypeError):
+            Base.load_from_file([], [])
+
+    def test_load_from_file_rectangle(self):
+        r = Rectangle(10, 7, 5, 7, 2)
+        r2 = Rectangle(13, 6, 3, 8, 1)
+
+        Rectangle.save_to_file([r, r2])
+        rlist = Rectangle.load_from_file()
+
+        self.assertEqual(str(r), str(rlist[0]))
+
 
 
 
