@@ -95,6 +95,35 @@ class TestRectangle_instances(unittest.TestCase):
         self.assertEqual(r.y, 15)
 
 
+class TestRectangle_width(unittest.TestCase):
+    """ Unittests for width of Rectangle """
+    def test_width_none(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(None, 6)
+
+    def test_width_float(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(8.1, 1)
+
+    def test_width_string(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("hi", 1)
+
+
+class TestRectangle_height(unittest.TestCase):
+    """ Unittests for height of Rectangle """
+    def test_height_none(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(1, None)
+
+    def test_height_float(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, 9.9)
+
+    def test_height(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(4, "h")
+
 
 class TestRectangle_area(unittest.TestCase):
     """ Unittests for task 4: returns area of Rectangle """
