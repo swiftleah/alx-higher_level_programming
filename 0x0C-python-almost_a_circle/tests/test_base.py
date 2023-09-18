@@ -71,7 +71,7 @@ class TestBase_to_json_string(unittest.TestCase):
             Base.to_json_string([], 1)
 
 class TestBase_save_to_file(unittest.TestCase):
-    """ writes JSON string rep to specified file """
+    """ Unittests for Task 17: writes JSON string rep to specified file """
     def test_save_to_file_none(self):
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
@@ -81,6 +81,27 @@ class TestBase_save_to_file(unittest.TestCase):
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual("[]", file.read())
+
+class TestBase_from_json_string(unittest.TestCase):
+    """ Unittests for Task 17: returns list of JSON string rep """
+    def test_from_json_string_none(self):
+        self.assertEqual([], Base.from_json_string(None))
+
+    def test_from_json_string_empty_list(self):
+        self.assertEqual([], Base.from_json_string("[]"))
+
+    def test_from_json_string_square(self):
+        input1 = [{'id': 89, 'width': 10, 'height': 4}]
+        json_input1 = Square.to_json_string(input1)
+        output1 = Square.from_json_string(json_input1)
+
+        self.assertEqual(input1, output1)
+
+    def test_from_json_string_no_args(self):
+        with self.assertRaises(TypeError):
+            Base.from_json_string()
+
+
 
 
 if __name__ == '__main__':
