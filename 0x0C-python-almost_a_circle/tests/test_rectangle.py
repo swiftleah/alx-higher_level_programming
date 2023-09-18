@@ -34,6 +34,56 @@ class TestRectangle_instances(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(2, 3, 4, 5, 6, 7)
 
+    def test_private_width(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 2, 1, 1, 3).__width)
+
+    def test_private_height(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 2, 1, 1, 3).__height)
+
+    def test_private_y(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 2, 1, 1, 3).__y)
+
+    def test_private_x(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 2, 1, 1, 3).__x)
+
+    def test_width_getter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+
+        self.assertEqual(r.width, 2)
+
+    def test_width_setter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+        r.width = 5
+
+        self.assertEqual(r.width, 5)
+
+    def test_height_getter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+
+        self.assertEqual(r.height, 3)
+
+    def test_height_setter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+        r.height = 10
+
+        self.assertEqual(r.height, 10)
+
+    def test_x_getter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+
+        self.assertEqual(r.x, 0)
+
+    def test_x_setter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+        r.x = 10
+
+        self.assertEqual(r.x, 10)
+
+
 
 class TestRectangle_area(unittest.TestCase):
     """ Unittests for task 4: returns area of Rectangle """
