@@ -9,6 +9,14 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
+class TestSquare_instances(unittest.TestCase):
+    """ Unittests for instances of Square """
+    def test_inheritence(self):
+        sq = Square(5)
+
+        self.assertIsInstance(sq, Base)
+
+
 class TestSquare_update(unittest.TestCase):
     """ Unittest for Task 12: assigns attributes
     args is list of arguments
