@@ -83,6 +83,17 @@ class TestRectangle_instances(unittest.TestCase):
 
         self.assertEqual(r.x, 10)
 
+    def test_y_getter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+
+        self.assertEqual(r.y, 0)
+
+    def test_y_setter(self):
+        r = Rectangle(2, 3, 0, 0, 1)
+        r.y = 15
+
+        self.assertEqual(r.y, 15)
+
 
 
 class TestRectangle_area(unittest.TestCase):
