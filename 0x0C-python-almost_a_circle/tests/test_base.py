@@ -61,3 +61,11 @@ class TestBase_to_json_string(unittest.TestCase):
         sq1_dict = sq1.to_dictionary()
 
         self.assertTrue(str, type(Base.to_json_string([sq1_dict])))
+
+    def test_to_json_string_no_arguments(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
+
+    def test_to_json_string_two_wrong_arguments(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string([], 1)
