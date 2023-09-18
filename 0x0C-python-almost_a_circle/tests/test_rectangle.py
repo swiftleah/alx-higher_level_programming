@@ -124,6 +124,34 @@ class TestRectangle_height(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(4, "h")
 
+class TestRectangle_x(unittest.TestCase):
+    """ Unittests for x co-ordinate of Rectangle """
+    def test_x_none(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(1, 2, None)
+
+    def test_x_float(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 9, 9.2)
+
+    def test_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(4, 1, "h")
+
+class TestRectangle_y(unittest.TestCase):
+    """ Unittests for y co-ordinate of Rectangle """
+    def test_y_none(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(1, 2, 5, None)
+
+    def test_y_float(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(2, 9, 5, 9.2)
+
+    def test_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(4, 1, 5, "h")
+
 
 class TestRectangle_area(unittest.TestCase):
     """ Unittests for task 4: returns area of Rectangle """
