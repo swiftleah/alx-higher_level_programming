@@ -101,6 +101,24 @@ class TestBase_from_json_string(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.from_json_string()
 
+class TestBase_create(unittest.TestCase):
+    """ Unittests for Task 18: returns an instance with all
+    attributes already set """
+    def test_create_rectangle(self):
+        r = Rectangle(3, 5, 1)
+        r.dict = r.to_dictionary()
+        r1 = Rectangle.create(**r.dict)
+
+        self.assertEqual("[Rectangle] (1) 1/0 - 3/5", str(r1))
+
+    def test_create_square(self):
+        sq = Square(3, 5, 6, 1)
+        sq.dict = sq.to_dictionary()
+        sq1 = Square.create(**sq.dict)
+
+
+        self.assertEqual("[Square] (1) 5/6 - 3", str(sq1))
+
 
 
 
