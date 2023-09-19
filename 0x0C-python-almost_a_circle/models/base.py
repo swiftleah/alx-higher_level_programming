@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -17,6 +18,44 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_csv_row(instance):
+        """ Converts an instance to a row of comma seperated values """
+        cls_name = instance.__class__.__name__
+        if cls_name == "Rectangle":
+            return [instance.id, instance.width, instance.height, instance.x, instance.y]
+        elif cls_name == "Square":
+            return [instance.id, instance.size, instance.x, instance.y]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes a list of objects to specified CSV file """
+        if list_objs is None:
+            list_objs = []
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                writer.writerow(cls.to_csv_row(obj))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserialize objects from specified CSV file - reads them """
+        filename = cls.__name__ + ".csv"
+        obj_list = []
+        try:
+            with open(filename, mode='r') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    elif cls.__name__ == "Square":
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    obj_list.append(obj)
+        except FileNotFoundError:
+            pass
+        return obj_list
 
     @staticmethod
     def to_json_string(list_dictionaries):
