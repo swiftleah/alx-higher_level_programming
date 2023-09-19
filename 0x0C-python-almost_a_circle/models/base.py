@@ -24,7 +24,10 @@ class Base:
         """ Converts an instance to a row of comma seperated values """
         cls_name = instance.__class__.__name__
         if cls_name == "Rectangle":
-            return [instance.id, instance.width, instance.height, instance.x, instance.y]
+            return [
+                    instance.id, instance.width, instance.height,
+                    instance.x, instance.y
+                    ]
         elif cls_name == "Square":
             return [instance.id, instance.size, instance.x, instance.y]
 
@@ -49,9 +52,11 @@ class Base:
                 reader = csv.reader(file)
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]),
+                                  int(row[4]), int(row[0]))
                     elif cls.__name__ == "Square":
-                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                        obj = cls(int(row[1]), int(row[2]),
+                                  int(row[3]), int(row[0]))
                     obj_list.append(obj)
         except FileNotFoundError:
             pass
