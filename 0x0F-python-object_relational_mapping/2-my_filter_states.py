@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists all states from db hbtn_0e_0_usa that start with 'N' """
+""" lists all states from db hbtn_0e_0_usa where name matches argument """
 
 
 import MySQLdb
@@ -11,7 +11,8 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
 
     mycursor = db.cursor()
-    mycursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    mycursor.execute("SELECT * FROM states WHERE name LIKE '{}' "
+                     "ORDER BY id ASC".format(sys.argv[4]))
     result = mycursor.fetchall()
 
     for row in result:
