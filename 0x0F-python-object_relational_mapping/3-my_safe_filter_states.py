@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" lists all states from db hbtn_0e_0_usa where name matches argument - protected from SQL injection """
+""" lists all states from db hbtn_0e_0_usa where name matches
+    argument - protected from SQL injection """
 
 
 import MySQLdb
