@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes URL and email, sends POST req and displays body of reponse
+""" takes URL and email, sends POST req and displays body of reponse """
 import sys
 import requests
 

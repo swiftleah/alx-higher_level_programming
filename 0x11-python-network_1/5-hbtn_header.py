@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes URL, sends req and displays X-request-Id in response header
+""" takes URL, sends req and displays X-request-Id in response header """
 import sys
 import requests
 

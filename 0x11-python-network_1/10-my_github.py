@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes github credentials and uses github API to display id
+""" takes github credentials and uses github API to display id"""
 import requests
 import sys
 

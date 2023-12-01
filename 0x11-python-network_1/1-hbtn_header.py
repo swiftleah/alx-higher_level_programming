@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes URL, sends req to URL & displays value of X-Request-Id var
+""" takes URL, sends req to URL & displays value of X-Request-Id var """
 import urllib.request
 import sys
 

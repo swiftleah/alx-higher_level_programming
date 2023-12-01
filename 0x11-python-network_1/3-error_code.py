@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes URL, sends req and displays body of response in utf-8 - otherwise error
+""" takes URL, sends req and displays body of response in utf-8 - otherwise error """
 import sys
 import urllib.error
 import urllib.request

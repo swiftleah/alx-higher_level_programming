@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes a letter and sends POST req to http://0.0.0.0:5000/search_user
+""" takes a letter and sends POST req to http://0.0.0.0:5000/search_user """
 import sys
 import requests
 
