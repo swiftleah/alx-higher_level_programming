@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes URL, sends req and displays body of response
+""" takes URL, sends req and displays body of response """
 import sys
 import requests
 
