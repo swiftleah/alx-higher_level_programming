@@ -12,7 +12,7 @@ req(requrl, function (error, response, body) {
     const dash = {};
     for (let i = 0; i < todo.length; i++) {
       const status = (todo[i].completed);
-      const key = todo[i]['userId'].toString();
+      const key = todo[i].userId.toString();
       if (status) {
         if (dash[key]) {
           dash[key]++;
